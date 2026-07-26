@@ -5,6 +5,15 @@ PRODUCT_BRAND ?= LineageOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+# GMS
+ifeq ($(WITH_GMS), true)
+LINEAGE_ZIP_TYPE := CORE
+LINEAGE_CORE := true
+$(call inherit-product, vendor/gms/common/common-vendor.mk)
+else
+LINEAGE_ZIP_TYPE := VANILLA
+endif
+
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=android-google
