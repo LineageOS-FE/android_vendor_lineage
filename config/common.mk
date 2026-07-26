@@ -219,7 +219,6 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/lineage/overlay/no-rro
 
 PRODUCT_PACKAGES += \
-    DocumentsUIOverlay \
     NetworkStackOverlay
 
 # Translations
